@@ -1,10 +1,22 @@
 import React from 'react'
+import { useEffect } from 'react';
 
 const Chart = () => {
+
+ 
+
+
     return (
-        <div>
-            <p>My Chart list</p>
-        </div>
+        <section className="menu">
+            <div className="title">
+                <h2>My Cart</h2>
+                <div className="underline"></div>
+            </div>
+
+            <div className="section-center">
+                
+            </div>
+        </section>
     );
 }
 
