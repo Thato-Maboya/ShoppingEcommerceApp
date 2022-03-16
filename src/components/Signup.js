@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Switch, Route, BrowserRouter as Router, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { button } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
 const Signup = () => {
     const classes = useStyles();
     const { register, handleSubmit, formState:{ errors} } = useForm();
+    let history = useHistory()
 
     const onSubmit = async (data) => {
         const { name, contact, email, password } = data
@@ -41,6 +43,7 @@ const Signup = () => {
                 console.error(error.message)
 
             })
+            history.push("/");
         } catch(error) {
             alert(error.message)
         }
@@ -69,6 +72,7 @@ const Signup = () => {
                         <div className="padding-break btn-container">
                             <button type="submit" className=" filter-btn">Sign Up</button>
                         </div>
+                        Already have an account?<Link className="nav-link" to="/SignIn"> SignIn</Link>
                     </form>
                 </div>
             </Container>
